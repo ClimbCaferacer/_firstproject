@@ -4,6 +4,7 @@ import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.jbehave.core.annotations.Named;
 
 import com.firstproject.steps.EndUserSteps;
 
@@ -17,13 +18,13 @@ public class DefinitionSteps {
         endUser.is_the_home_page();
     }
 
-    @When("the user looks up the definition of the word '$word'")
-    public void whenTheUserLooksUpTheDefinitionOf(String word) {
+    @When("the user looks up the definition of the word $fruit")
+    public void whenTheUserLooksUpTheDefinitionOf(@Named("fruit") String word) {
         endUser.looks_for(word);
     }
 
-    @Then("they should see the definition '$definition'")
-    public void thenTheyShouldSeeADefinitionContainingTheWords(String definition) {
+    @Then("they should see the definition $definition")
+    public void thenTheyShouldSeeADefinitionContainingTheWords(@Named("definition") String definition) {
         endUser.should_see_definition(definition);
     }
 
