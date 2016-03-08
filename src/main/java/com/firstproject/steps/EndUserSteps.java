@@ -39,4 +39,11 @@ public class EndUserSteps extends ScenarioSteps {
         enters(term);
         starts_search();
     }
+
+    @Step
+    public void mainPageOpening(){
+        System.out.println("Main page is opening...");
+    }
+
+
 }

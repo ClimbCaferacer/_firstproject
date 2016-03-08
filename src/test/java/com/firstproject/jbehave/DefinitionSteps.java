@@ -15,11 +15,12 @@ public class DefinitionSteps {
 
     @Given("the user is on the Wikionary home page")
     public void givenTheUserIsOnTheWikionaryHomePage() {
+        endUser.mainPageOpening();
         endUser.is_the_home_page();
     }
 
-    @When("the user looks up the definition of the word $fruit")
-    public void whenTheUserLooksUpTheDefinitionOf(@Named("fruit") String word) {
+    @When("the user looks up the definition of the word $word")
+    public void whenTheUserLooksUpTheDefinitionOf(@Named("word") String word) {
         endUser.looks_for(word);
     }
 
